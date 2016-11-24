@@ -6,9 +6,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     private Button bGitText;
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bGitText = (Button) findViewById(R.id.bGitText);
 
         bGitText.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Git button clicked", Toast.LENGTH_SHORT).show();
             }
-        }
+        });
     }
+}
