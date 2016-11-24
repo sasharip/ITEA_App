@@ -16,8 +16,8 @@
         android:text="Hello World!" />
 
     <Button
-        android:text="Button"
+        android:id="@+id/bGitText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button" />
+        android:text="Git Text" />
 </RelativeLayout>
