@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">ITEA_App</string>
+    <string name="rbFreelance">Freelance</string>
+    <string name="rbFulltime">Fulltime</string>
+    <string name="rbRemote">Remote</string>
+    <string name="rbOther">Other</string>
+    <string name="etName">Name</string>
+    <string name="etSurname">Surname</string>
+    <string name="etEmail">Email</string>
+    <string name="etWorkSchedule">Work Schedule</string>
+    <string name="etSkills">Skills</string>
+    <string name="cbJava">Java</string>
+    <string name="cbAndroid">Android</string>
+    <string name="cbJavaEE">Java EE</string>
+    <string name="cbCsharp">C#</string>
+    <string name="cbPHP">PHP</string>
+    <string name="cbOther">Other</string>
+    <string name="bSave">Save</string>
+    <string name="bCancel">Cancel</string>
+    <string name="bLater">Later</string>
+    <string name="cbAuto">Auto</string>
+    <string name="cbCreditCard">Credit Card</string>
 </resources>
