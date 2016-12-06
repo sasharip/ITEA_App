@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_second"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bcgrdblur"
+    android:gravity="center"
+    tools:context="com.vatttghern.itea_app.SecondActivity">
+
+    <TextView
+        android:id="@+id/tv38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:inputType="phone"
+        android:shadowColor="#000000"
+        android:shadowDx="1"
+        android:shadowDy="1"
+        android:shadowRadius="1"
+        android:text="+38"
+        android:textColor="#ffffff"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/etNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tv38"
+        android:digits="0123456789+"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/etNumber"
+        android:inputType="phone"
+        android:maxLength="9"
+        android:textColorHint="#ffffff"
+        android:textSize="25sp"
+        android:theme="@style/Theme.App.Base" />
+
+
+
+    <Button
+        android:id="@+id/bCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/etNumber"
+        android:layout_below="@+id/etNumber"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="62dp"
+        android:text="@string/bCall" />
+</RelativeLayout>

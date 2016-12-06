@@ -20,4 +20,22 @@
     <string name="bLater">Later</string>
     <string name="cbAuto">Auto</string>
     <string name="cbCreditCard">Credit Card</string>
+    <string name="bTeleport">Teleport</string>
+    <string name="twToolbar">Sign In</string>
+    <string name="tvHelloAgain">Hello Again!</string>
+    <string name="SighInUsing">Sigh in using</string>
+    <string name="bGoogle">Google</string>
+    <string name="bFacebook">Facebook</string>
+    <string name="ibGoogle">Google</string>
+    <string name="ibFacebook">Facebook</string>
+    <string name="tvOR">or</string>
+    <string name="etLogin">Login</string>
+    <string name="etPassword">Password</string>
+    <string name="bLogIn">Log In</string>
+    <string name="tvFYP">Forgot your password?</string>
+    <string name="tvSignUp">SignUp</string>
+    <string name="tvTerms">Terms</string>
+    <string name="SecondActivity">Second Activity</string>
+    <string name="etNumber">enter your number</string>
+    <string name="bCall">Call</string>
 </resources>
