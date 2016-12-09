@@ -38,4 +38,10 @@
     <string name="SecondActivity">Second Activity</string>
     <string name="etNumber">enter your number</string>
     <string name="bCall">Call</string>
+    <string name="title_activity_second">Profile Activity</string>
+    <string name="etPhone">Phone Number</string>
+    <string name="etCountry">Country</string>
+    <string name="bExit">Exit</string>
+    <string name="etCity">City</string>
+    <string name="etNotes">Notes</string>
 </resources>

@@ -7,15 +7,16 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
     <!-- ToolBar --><style name="Theme.Custom" parent="Theme.AppCompat">
-    <item name="windowActionBar">false</item>
+    <item name="windowActionBar">true</item>
     <item name="windowActionBarOverlay">true</item>
     <item name="android:windowActionBarOverlay">true</item>
 </style>
 
-    <style name="CustomActionBar" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    <style name="CustomActionBar" parent="@style/Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowActionBarOverlay">true</item>
         <!-- Support library compatibility -->
         <item name="windowActionBarOverlay">true</item>
+        <item name="android:background">#b3000000</item>
         <item name="android:textSize">12sp</item>
         <item name="android:shadowColor">#000000</item>
         <item name="android:shadowDx">1</item>

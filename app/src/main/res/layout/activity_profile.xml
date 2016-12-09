@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.vatttghern.itea_app.ProfileActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tNewToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#3355ff00"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <LinearLayout
+        android:id="@+id/llPicNameEtc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tNewToolBar"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/ivProfPic"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@drawable/profileicon"
+            android:cropToPadding="true"
+            android:padding="5dp"/>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:digits="abcdefghijklmnopqrstuvwxyzABDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/etName"
+                />
+
+            <EditText
+                android:id="@+id/etSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etName"
+                android:digits="abcdefghijklmnopqrstuvwxyzABDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/etSurname"
+                />
+
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/etSurname"
+                android:digits="abcdefghijklmnopqrstuvwxyzABDEFGHIJKLMNOPQRSTUVWXYZ@."
+                android:hint="@string/etEmail"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/llPicNameEtc"
+        android:digits="abcdefghijklmnopqrstuvwxyzABDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:hint="@string/etCountry"
+        />
+
+    <EditText
+        android:id="@+id/etCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etCountry"
+        android:digits="abcdefghijklmnopqrstuvwxyzABDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:hint="@string/etCity"
+        />
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etCity"
+        android:digits="abcdefghijklmnopqrstuvwxyzABDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:hint="@string/etPhone"
+        />
+
+    <EditText
+        android:id="@+id/etNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etPhone"
+        android:digits="abcdefghijklmnopqrstuvwxyzABDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:hint="@string/etNotes"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNotes"
+        android:weightSum="3">
+
+        <Button
+            android:id="@+id/bSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#69c163"
+            android:onClick="check"
+            android:text="@string/bSave"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/bCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#69c163"
+            android:onClick="check"
+            android:text="@string/bCancel"
+            android:textSize="18sp"
+            />
+
+        <Button
+            android:id="@+id/bExit1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#69c163"
+            android:onClick="finish"
+            android:text="@string/bExit"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+</RelativeLayout>

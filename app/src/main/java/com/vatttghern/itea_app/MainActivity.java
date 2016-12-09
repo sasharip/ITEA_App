@@ -1,72 +1,64 @@
 package com.vatttghern.itea_app;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.EditText;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-  @BindView(R.id.ivBackground)
-  ImageView ivBlur;
+public class MainActivity extends AppCompatActivity {
 
-  @BindView(R.id.toolbar)
-  Toolbar toolbar;
+  @BindView(R.id.tNewToolBar)
+  Toolbar tNewToolBar;
 
-  @BindView(R.id.twToolbar)
-  TextView twToolbar;
+  @BindView(R.id.etLogin)
+  EditText userLogin;
 
-  @BindView(R.id.bFacebook)
-  Button bFacebook;
-
-  @BindView(R.id.bGoogle)
-  Button bGoogle;
+  @BindView(R.id.etPassword)
+  EditText userPassword;
 
   @BindView(R.id.bSignIn)
   Button bSignIn;
 
+  public static final String LOGIN = "login";
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-
     setContentView(R.layout.activity_main);
     ButterKnife.bind(this);
 
-    Bitmap ivFinishedBlur =
-        BlurBuilder.blur(this, BitmapFactory.decodeResource(getResources(), R.drawable.bcgrdblur));
-    ivBlur.setImageBitmap(ivFinishedBlur);
-    bFacebook.setOnClickListener(this);
-    bGoogle.setOnClickListener(this);
-    bSignIn.setOnClickListener(this);
-  }
+    setSupportActionBar(tNewToolBar);
+    getSupportActionBar().setTitle("Log In");
 
-  @Override
-  public void onClick(View v) {
+    //       final String etPassword = userPassword.getText().toString();
 
-    switch (v.getId()) {
-      case R.id.bFacebook:
-        Toast.makeText(MainActivity.this, "Logged In Google", Toast.LENGTH_SHORT).show();
-        break;
+    bSignIn.setOnClickListener(
+        new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+            Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+            i.putExtra("login", userLogin.getText().toString());
+            //            i.putExtra("password", etPassword);
+            startActivity(i);
+            finish();
+          }
+        });
 
-      case R.id.bGoogle:
-        Toast.makeText(MainActivity.this, "Logged in Facebook", Toast.LENGTH_SHORT).show();
-        break;
+    //        lvTest = (ListView) findViewById(R.id.lvTest);
+    //        adapter = new LvAdapterTest(this, R.layout.each_item);
+    //        lvTest.setAdapter(adapter);
+    //        List<ImageView> l = new ArrayList<ImageView>();
+    //        for (i = 0; i < 40; i++) {
+    //            l.add(new ImageView(getApplicationContext()));
+    //
+    //        }
+    //        adapter.updateList(l);
 
-      case R.id.bSignIn:
-        startActivity(new Intent(getApplicationContext(),SecondActivity.class));
-        break;
-
-      default:
-        break;
-    }
   }
 }
