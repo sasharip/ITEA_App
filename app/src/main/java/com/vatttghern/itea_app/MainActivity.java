@@ -5,11 +5,12 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,10 +23,11 @@ public class MainActivity extends AppCompatActivity {
   @BindView(R.id.etPassword)
   EditText userPassword;
 
-  @BindView(R.id.bSignIn)
-  Button bSignIn;
+
 
   public static final String LOGIN = "login";
+
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +40,17 @@ public class MainActivity extends AppCompatActivity {
 
     //       final String etPassword = userPassword.getText().toString();
 
-    bSignIn.setOnClickListener(
-        new View.OnClickListener() {
-          @Override
-          public void onClick(View v) {
-            Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
-            i.putExtra("login", userLogin.getText().toString());
-            //            i.putExtra("password", etPassword);
-            startActivity(i);
-            finish();
-          }
-        });
+    //    bSignIn.setOnClickListener(
+    //        new View.OnClickListener() {
+    //          @Override
+    //          public void onClick(View v) {
+    //            Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+    //            i.putExtra("login", userLogin.getText().toString());
+    //            //            i.putExtra("password", etPassword);
+    //            startActivity(i);
+    //            finish();
+    //          }
+    //        });
 
     //        lvTest = (ListView) findViewById(R.id.lvTest);
     //        adapter = new LvAdapterTest(this, R.layout.each_item);
@@ -60,5 +62,22 @@ public class MainActivity extends AppCompatActivity {
     //        }
     //        adapter.updateList(l);
 
+  }
+
+  @OnClick(R.id.bSignIn)
+  void bSignIn(View view) {
+    String login = userLogin.getText().toString();
+    String password = userPassword.getText().toString();
+    if (login.isEmpty() || password.isEmpty()) {
+      Toast.makeText(getApplicationContext(), "Please enter your login and password", Toast.LENGTH_SHORT).show();
+
+    } else {
+
+      Intent i = new Intent(getApplicationContext(), ProfileActivity.class);
+      i.putExtra("login", userLogin.getText().toString());
+
+      startActivity(i);
+      finish();
+    }
   }
 }

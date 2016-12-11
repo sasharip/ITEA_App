@@ -39,9 +39,17 @@
     <string name="etNumber">enter your number</string>
     <string name="bCall">Call</string>
     <string name="title_activity_second">Profile Activity</string>
+    <string name="title_activity_third">List Activity</string>
     <string name="etPhone">Phone Number</string>
     <string name="etCountry">Country</string>
     <string name="bExit">Exit</string>
     <string name="etCity">City</string>
     <string name="etNotes">Notes</string>
+    <string name="nameLabel">Name:</string>
+    <string name="surnameLabel">Surname:</string>
+    <string name="emailLabel">Email:</string>
+    <string name="countryLabel">Country:</string>
+    <string name="cityLabel">City:</string>
+    <string name="phoneLabel">Phone:</string>
+    <string name="bBack">Back</string>
 </resources>

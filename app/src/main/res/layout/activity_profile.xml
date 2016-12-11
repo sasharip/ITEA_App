@@ -91,9 +91,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etCity"
-        android:digits="abcdefghijklmnopqrstuvwxyzABDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:digits="0123456789"
         android:hint="@string/etPhone"
-        />
+        android:inputType="phone"/>
 
     <EditText
         android:id="@+id/etNotes"

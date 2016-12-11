@@ -1,5 +1,6 @@
 package com.vatttghern.itea_app;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -12,9 +13,15 @@ public class POJO implements Parcelable {
     private String city;
     private String notes;
     private Integer phone;
+    private Integer image;
 
-    /** No args constructor for use in serialization */
-    public POJO() {}
+    /**
+     * No args constructor for use in serialization
+     * @param text
+     * @param i
+     */
+    public POJO(String text, int i) {
+    }
 
     /**
      * @param phone
@@ -32,6 +39,7 @@ public class POJO implements Parcelable {
             String country,
             String city,
             String notes,
+            Integer image,
             Integer phone) {
         super();
         this.name = name;
@@ -39,16 +47,21 @@ public class POJO implements Parcelable {
         this.email = email;
         this.country = country;
         this.city = city;
+        this.image = image;
         this.notes = notes;
         this.phone = phone;
     }
 
-    /** @return The name */
+    /**
+     * @return The name
+     */
     public String getName() {
         return name;
     }
 
-    /** @param name The name */
+    /**
+     * @param name The name
+     */
     public void setName(String name) {
         this.name = name;
     }
@@ -58,12 +71,16 @@ public class POJO implements Parcelable {
         return this;
     }
 
-    /** @return The surname */
+    /**
+     * @return The surname
+     */
     public String getSurname() {
         return surname;
     }
 
-    /** @param surname The surname */
+    /**
+     * @param surname The surname
+     */
     public void setSurname(String surname) {
         this.surname = surname;
     }
@@ -73,12 +90,16 @@ public class POJO implements Parcelable {
         return this;
     }
 
-    /** @return The email */
+    /**
+     * @return The email
+     */
     public String getEmail() {
         return email;
     }
 
-    /** @param email The email */
+    /**
+     * @param email The email
+     */
     public void setEmail(String email) {
         this.email = email;
     }
@@ -88,12 +109,16 @@ public class POJO implements Parcelable {
         return this;
     }
 
-    /** @return The country */
+    /**
+     * @return The country
+     */
     public String getCountry() {
         return country;
     }
 
-    /** @param country The country */
+    /**
+     * @param country The country
+     */
     public void setCountry(String country) {
         this.country = country;
     }
@@ -103,12 +128,16 @@ public class POJO implements Parcelable {
         return this;
     }
 
-    /** @return The city */
+    /**
+     * @return The city
+     */
     public String getCity() {
         return city;
     }
 
-    /** @param city The city */
+    /**
+     * @param city The city
+     */
     public void setCity(String city) {
         this.city = city;
     }
@@ -118,12 +147,16 @@ public class POJO implements Parcelable {
         return this;
     }
 
-    /** @return The notes */
+    /**
+     * @return The notes
+     */
     public String getNotes() {
         return notes;
     }
 
-    /** @param notes The notes */
+    /**
+     * @param notes The notes
+     */
     public void setNotes(String notes) {
         this.notes = notes;
     }
@@ -133,18 +166,41 @@ public class POJO implements Parcelable {
         return this;
     }
 
-    /** @return The phone */
+    /**
+     * @return The phone
+     */
     public Integer getPhone() {
         return phone;
     }
 
-    /** @param phone The phone */
+    /**
+     * @param phone The phone
+     */
     public void setPhone(Integer phone) {
         this.phone = phone;
     }
 
     public POJO withPhone(Integer phone) {
         this.phone = phone;
+        return this;
+    }
+
+    /**
+     * @return The image
+     */
+    public Integer getImage() {
+        return image;
+    }
+
+    /**
+     * @param image The phone
+     */
+    public void setImage(Bitmap image) {
+        this.image = phone;
+    }
+
+    public POJO withImage(Integer image) {
+        this.image = image;
         return this;
     }
 
@@ -156,6 +212,7 @@ public class POJO implements Parcelable {
         city = in.readString();
         notes = in.readString();
         phone = in.readByte() == 0x00 ? null : in.readInt();
+        image = in.readByte() == 0x00 ? null : in.readInt();
     }
 
     @Override
@@ -176,6 +233,12 @@ public class POJO implements Parcelable {
         } else {
             dest.writeByte((byte) (0x01));
             dest.writeInt(phone);
+        }
+        if (image == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeInt(image);
         }
     }
 
